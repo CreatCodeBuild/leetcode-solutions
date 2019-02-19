@@ -1,6 +1,9 @@
 # leetcode solutions
 My leetcode solutions in Python and posibly JavaScript, Java, C++
 
+## 视频讲解
+B站：https://space.bilibili.com/16696495/channel/detail?cid=62463
+
 ## LeetCode 或者说“编程题”对程序员面试有帮助吗？
 
 __简单：有，也可能完全没有__
