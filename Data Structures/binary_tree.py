@@ -65,6 +65,14 @@ class Tree:
         if self.right:
             yield from self.right.in_order_g()
 
+    def binary_order_g(self):
+        if (yield self.v):
+            if self.left:
+                yield from self.left.in_order_g()
+        else:
+            if self.right:
+                yield from self.right.in_order_g()
+
     def reduce(self, reducer):
         g = self.in_order_g()
         init = next(g)
@@ -84,10 +92,19 @@ class Tree:
                 yield v
 
     def contains(self, v2):
-        g = self.in_order_g()
-        for v in g:
-            if v == v2:
-                return True
+        g = self.binary_order_g()
+        bigger = None
+        while True:
+            try:
+                v = g.send(bigger)
+                if v == v2:
+                    return True
+                if v >= v2:
+                    bigger = True
+                else:
+                    bigger = False
+            except StopIteration:
+                break
         return False
 
 
@@ -112,3 +129,5 @@ print('reduce mul:', result)
 mapped = t.map(lambda x: x+1)
 for ele in mapped:
     print(ele)
+
+print(t.contains(-2))
