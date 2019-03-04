@@ -66,6 +66,9 @@ class Tree:
             yield from self.right.in_order_g()
 
     def binary_order_g(self):
+        '''
+        https://docs.python.org/3/reference/expressions.html#generator.send
+        '''
         smaller = (yield self.v)
         if smaller:
             if self.left:
