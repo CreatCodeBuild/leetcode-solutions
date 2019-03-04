@@ -97,16 +97,16 @@ class Tree:
 
     def contains(self, v2):
         g = self.binary_order_g()
-        bigger = None
+        smaller = None
         while True:
             try:
-                v = g.send(bigger)
+                v = g.send(smaller)
                 if v == v2:
                     return True
-                if v >= v2:
-                    bigger = True
+                if v2 >= v:
+                    smaller = False
                 else:
-                    bigger = False
+                    smaller = True
             except StopIteration:
                 break
         return False
@@ -134,4 +134,4 @@ mapped = t.map(lambda x: x+1)
 for ele in mapped:
     print(ele)
 
-print(t.contains(-1))
+print(t.contains(-2))
