@@ -66,7 +66,8 @@ class Tree:
             yield from self.right.in_order_g()
 
     def binary_order_g(self):
-        if (yield self.v):
+        smaller = (yield self.v)
+        if smaller:
             if self.left:
                 yield from self.left.in_order_g()
         else:
@@ -108,7 +109,7 @@ class Tree:
         return False
 
 
-t = Tree(10)
+t = Tree(0)
 t.add(-1)
 t.add(-3)
 t.add(1)
@@ -130,4 +131,4 @@ mapped = t.map(lambda x: x+1)
 for ele in mapped:
     print(ele)
 
-print(t.contains(-2))
+print(t.contains(-1))
