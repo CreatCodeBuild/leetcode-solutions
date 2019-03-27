@@ -2,8 +2,13 @@
 Leetcode solutions in Python and Go
 
 ## 视频讲解
-B站：https://space.bilibili.com/16696495/channel/detail?cid=62463  
-YouTube：https://www.youtube.com/channel/UCHPHGYUfAfRIvf1RT9sADLg
+### B站
+Go: https://space.bilibili.com/16696495/channel/detail?cid=68896
+
+Python: https://space.bilibili.com/16696495/channel/detail?cid=62463  
+
+### YouTube
+https://www.youtube.com/channel/UCHPHGYUfAfRIvf1RT9sADLg
 
 ## LeetCode 或者说“编程题”对程序员面试有帮助吗？
 
